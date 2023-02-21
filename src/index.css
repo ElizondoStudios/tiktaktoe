@@ -1,0 +1,128 @@
+:root {
+  background-image: linear-gradient(#300350, #94167F);
+  height: 100vh;
+  font-size: 10px;
+  font-family:'Raleway', sans-serif;
+}
+
+.App{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top:5vh;
+}
+
+.container, .game-over{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.game-over{
+  position: absolute;
+  background-color: #9500ffec;
+  color: white;
+  width: 50%;
+  height: 65vh;
+  z-index: 2;
+}
+
+  .tablero{
+    display: grid;
+    width: 50vw;
+    max-width: 300px;
+    height: 50vh;
+    max-height: 300px;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 30% 30% 30%;
+    gap: 5%;
+    padding: 6px;
+    margin: 20px;
+  }
+
+    .casilla{
+      width: 100%;
+      height: 100%;
+      border: solid 3px #E93479;
+      border-radius: 5%;
+      cursor: pointer;
+    }
+
+    .cruz{
+      background-image: url("./assets/cross.svg");
+      background-size: contain;
+      filter: invert(100%);
+    }
+
+    .circulo{
+      background-image: url("./assets/circle.svg");
+      background-size: contain;
+      filter: invert(100%);
+    }
+
+button{
+  font-size: 2rem;
+  width: 30%;
+  height: 40px;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom right,#F62E97, #F9AC53);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+h1{
+  color: #00fff9;
+  font-size: 3.2rem;
+  transform: rotate(-10deg);
+  animation: infinite 1.5s title-animation;
+}
+
+@keyframes title-animation {
+  0%{
+    color: #00fff9;
+  }
+  10%{
+    color:#00c5c2
+  }
+  20%{
+    color: #00a09d;
+  }
+  30%{
+    color: #007977;
+  }
+  40%{
+    color: #005352
+  }
+  50%{
+    color:#003a39
+  }
+  60%{
+    color: #005352
+  }
+  70%{
+    color: #007977;
+  }
+  80%{
+    color: #00a09d;
+  }
+  90%{
+    color:#00c5c2
+  }
+  100%{
+    color: #00fff9;
+  }
+}
+
+h2{
+  font-size: 2.8rem;
+}
+
+p{
+  font-size: 2rem;
+}
+
