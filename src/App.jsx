@@ -1,15 +1,21 @@
-import { useRef, useState} from 'react'
+import { useEffect, useRef, useState} from 'react'
 import { nanoid } from 'nanoid'
 
 function App() {
   const [Tablero, setTablero]= useState(["","","","","","","","",""])
   const [GameOver, setGameOver] = useState(false)
-
+  const [Lang, setLang] = useState("")
 
   const SimboloActual= useRef("O")
   const Turno= useRef(0)
 
-  !GameOver && checkGameOver()
+  useEffect(() => {
+    setLang(navigator.language.includes("es")? "español": "english")
+  },[])
+
+  useEffect(() => {
+    checkGameOver()
+  },[Tablero])
 
   function handleClick(index){
     SimboloActual.current= SimboloActual.current=== "X"? "O": "X"
@@ -76,13 +82,19 @@ function App() {
       onClick={()=>{handleClick(index)}}></div>
     )
 
+  const reset_button= <button onClick={reset}>{Lang==="español"? "Reiniciar": "Reset"}</button>
+  
+  const texto_ganar= Lang==="español"?
+    `Ganó el jugador ${SimboloActual.current} en ${Turno.current} turnos`:
+    `Player ${SimboloActual.current} won in ${Turno.current} turns`
+  
   return (
     <div className="App">
       {GameOver &&
        <div className="game-over">
         <h2>Game Over!</h2>
-        <p>Ganó el jugador {SimboloActual.current} en {Turno.current} turnos</p>
-        <button onClick={reset}>Reiniciar</button>
+        <p>{texto_ganar}</p>
+        {reset_button}
        </div>
       }
       <div className="container">
@@ -90,7 +102,7 @@ function App() {
         <div className="tablero">
           {casillas}
         </div>
-        <button onClick={reset}>Reiniciar</button>
+        {reset_button}
       </div>
     </div>
   )

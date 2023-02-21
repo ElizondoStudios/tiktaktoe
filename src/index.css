@@ -82,41 +82,41 @@ h1{
   animation: infinite 1.5s title-animation;
 }
 
-@keyframes title-animation {
-  0%{
-    color: #00fff9;
+  @keyframes title-animation {
+    0%{
+      color: #00fff9;
+    }
+    10%{
+      color:#00c5c2
+    }
+    20%{
+      color: #00a09d;
+    }
+    30%{
+      color: #007977;
+    }
+    40%{
+      color: #005352
+    }
+    50%{
+      color:#003a39
+    }
+    60%{
+      color: #005352
+    }
+    70%{
+      color: #007977;
+    }
+    80%{
+      color: #00a09d;
+    }
+    90%{
+      color:#00c5c2
+    }
+    100%{
+      color: #00fff9;
+    }
   }
-  10%{
-    color:#00c5c2
-  }
-  20%{
-    color: #00a09d;
-  }
-  30%{
-    color: #007977;
-  }
-  40%{
-    color: #005352
-  }
-  50%{
-    color:#003a39
-  }
-  60%{
-    color: #005352
-  }
-  70%{
-    color: #007977;
-  }
-  80%{
-    color: #00a09d;
-  }
-  90%{
-    color:#00c5c2
-  }
-  100%{
-    color: #00fff9;
-  }
-}
 
 h2{
   font-size: 2.8rem;
