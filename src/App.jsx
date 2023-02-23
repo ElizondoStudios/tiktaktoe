@@ -76,7 +76,7 @@ function App() {
   const casillas= Tablero.map(
     (marca, index) =>
      <div
-      className={`casilla ${marca!=""? marca==="X"?"cruz": "circulo": ""}`}
+      className={`casilla ${marca!=""? marca==="X"?"cruz": "circulo": "vacia"}`}
       key={nanoid()} 
       index={index} 
       onClick={()=>{handleClick(index)}}></div>

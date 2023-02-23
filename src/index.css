@@ -53,6 +53,10 @@
       cursor: pointer;
     }
 
+      .vacia:hover{
+        opacity: 40%;
+      }
+
     .cruz{
       background-image: url("./assets/cross.svg");
       background-size: contain;
@@ -130,3 +134,10 @@ p{
   font-size: 2rem;
 }
 
+
+/* media query for reduced motion */
+@media (prefers-reduced-motion) {
+  h1{
+    animation: none;
+  }
+}
